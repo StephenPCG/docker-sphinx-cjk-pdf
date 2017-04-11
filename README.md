@@ -7,7 +7,7 @@
 将文档根目录（Makefile所在的目录）挂载到 ``/sphinx`` 上，运行 ``make latexpdf`` 即可。
 
 ```
-docker run -it --rm -v $PWD:/sphinx init2/sphinx-cnpdf make latexpdf
+docker run -it --rm -v $PWD:/sphinx init2/sphinx-cjk-pdf make latexpdf
 ```
 
 ``conf.py`` 中相关的配置：
