@@ -35,6 +35,12 @@ RUN apt-get update \
 	&& apt-get remove --purge --auto-remove -y gcc curl libc6-dev \
 	&& rm -rf /var/lib/apt/lists/*
 
+# install common tools
+RUN apt-get update \
+	&& DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+		graphviz \
+	&& rm -rf /var/lib/apt/lists/*
+
 ADD entry.sh /entry.sh
 
 VOLUME ["/sphinx"]
