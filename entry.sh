@@ -1,9 +1,13 @@
 #!/bin/bash
 set -e
 
-_UID=0
+# install requirements
+if test -f requirements.txt; then
+    pip install -r requirements.txt
+fi
 
 # determine user by Makefile
+_UID=0
 if test -f Makefile; then
     _UID=$(stat --format=%u Makefile)
 fi
